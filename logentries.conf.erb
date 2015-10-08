@@ -4,5 +4,5 @@ $ActionSendStreamDriverMode 1
 $ActionSendStreamDriverAuthMode x509/name
 $ActionSendStreamDriverPermittedPeer *.logentries.com
 
-$template LogentriesTemplate,"<%= ENV['LE_TOKEN'] %> <%= ENV['SYSLOG_HOSTNAME'] %> %syslogtag%%msg%\n"
+$template LogentriesTemplate,"<%= ENV['LE_TOKEN'] %> <%= ENV['SYSLOG_HOSTNAME'] %> %syslogtag%%msg:1:1024%\n"
 *.* @@api.logentries.com:20000;LogentriesTemplate

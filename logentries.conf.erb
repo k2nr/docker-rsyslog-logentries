@@ -1,0 +1,8 @@
+$DefaultNetstreamDriverCAFile /etc/ssl/certs/logentries.all.crt
+$ActionSendStreamDriver gtls
+$ActionSendStreamDriverMode 1
+$ActionSendStreamDriverAuthMode x509/name
+$ActionSendStreamDriverPermittedPeer *.logentries.com
+
+$template LogentriesTemplate,"<%= ENV['LE_TOKEN'] %> <%= ENV['SYSLOG_HOSTNAME'] %> %syslogtag%%msg%\n"
+*.* @@api.logentries.com:20000;LogentriesTemplate

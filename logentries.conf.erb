@@ -17,5 +17,5 @@ $ActionQueueSaveOnShutdown on
 $ActionQueueTimeoutEnqueue 2
 $ActionQueueDiscardSeverity 0
 
-$template LogentriesTemplate,"<%= ENV['LE_TOKEN'] %> <%= ENV['SYSLOG_HOSTNAME'] %> %syslogtag%%msg:1:1024%\n"
+$template LogentriesTemplate,"<%= ENV['LE_TOKEN'] %> %syslogtag%%msg:1:1024%\n"
 *.* @@api.logentries.com:20000;LogentriesTemplate
